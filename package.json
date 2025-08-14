@@ -2,7 +2,7 @@
   "name": "cashier-system-react",
   "version": "1.0.0",
   "description": "نظام كاشير محل البلاستيكات - تطبيق React",
-  "homepage": "https://yourusername.github.io/cashier-system",
+  "homepage": "https://fadyhany0.github.io/syscash",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

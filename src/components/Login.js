@@ -122,11 +122,7 @@ const Login = ({ onLogin }) => {
           </button>
         </form>
         
-        <div className="credentials-info">
-          <strong>بيانات الدخول الافتراضية:</strong><br />
-          اسم المستخدم: <strong>markncode</strong><br />
-          كلمة المرور: <strong>Markncode123</strong>
-        </div>
+
       </div>
     </div>
   );
