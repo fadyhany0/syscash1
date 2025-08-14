@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/syscash/static/css/main.ff45ae52.css",
+    "main.js": "/syscash/static/js/main.5408a5f6.js",
+    "index.html": "/syscash/index.html",
+    "main.ff45ae52.css.map": "/syscash/static/css/main.ff45ae52.css.map",
+    "main.5408a5f6.js.map": "/syscash/static/js/main.5408a5f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff45ae52.css",
+    "static/js/main.5408a5f6.js"
+  ]
+}
