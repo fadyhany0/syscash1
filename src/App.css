@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* تحسين الأداء على الأجهزة المحمولة */
+.App {
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+

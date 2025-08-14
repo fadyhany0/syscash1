@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>تسجيل الدخول - نظام كاشير محل البلاستيكات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 15px;
+            overflow-x: hidden;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 30px 25px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+        
+        .logo {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            color: #667eea;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .title {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-weight: bold;
+            line-height: 1.2;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+        
+        .form-group {
+            margin-bottom: 18px;
+            text-align: right;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 16px; /* لمنع التكبير التلقائي على iOS */
+            transition: all 0.3s ease;
+            background: white;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        .error-message {
+            background: #fee;
+            color: #e74c3c;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            border: 1px solid #fcc;
+            display: none;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .success-message {
+            background: #efe;
+            color: #27ae60;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            border: 1px solid #cfc;
+            display: none;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .credentials-info {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        .credentials-info strong {
+            color: #495057;
+        }
+        
+        /* تحسينات للهواتف الصغيرة */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .login-container {
+                padding: 25px 20px;
+                margin: 5px;
+                border-radius: 16px;
+            }
+            
+            .logo {
+                font-size: 3em;
+                margin-bottom: 12px;
+            }
+            
+            .title {
+                font-size: 1.5em;
+                margin-bottom: 6px;
+            }
+            
+            .subtitle {
+                font-size: 0.9em;
+                margin-bottom: 20px;
+            }
+            
+            .form-group {
+                margin-bottom: 16px;
+            }
+            
+            .form-group input {
+                padding: 12px 14px;
+                font-size: 16px;
+                border-radius: 10px;
+            }
+            
+            .login-btn {
+                padding: 14px;
+                font-size: 1em;
+                border-radius: 10px;
+            }
+            
+            .credentials-info {
+                font-size: 0.75em;
+                padding: 12px;
+            }
+        }
+        
+        /* تحسينات للهواتف الصغيرة جداً */
+        @media (max-width: 360px) {
+            .login-container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 2.5em;
+            }
+            
+            .title {
+                font-size: 1.3em;
+            }
+            
+            .subtitle {
+                font-size: 0.85em;
+            }
+            
+            .form-group input {
+                padding: 10px 12px;
+            }
+            
+            .login-btn {
+                padding: 12px;
+            }
+        }
+        
+        /* تحسينات للشاشات الكبيرة */
+        @media (min-width: 768px) {
+            .login-container {
+                padding: 40px;
+                max-width: 450px;
+            }
+            
+            .logo {
+                font-size: 4em;
+            }
+            
+            .title {
+                font-size: 2.2em;
+            }
+            
+            .subtitle {
+                font-size: 1.2em;
+            }
+        }
+        
+        /* تحسينات للوضع الأفقي على الهاتف */
+        @media (max-height: 500px) and (orientation: landscape) {
+            body {
+                padding: 10px;
+            }
+            
+            .login-container {
+                padding: 20px;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            
+            .logo {
+                font-size: 2.5em;
+                margin-bottom: 10px;
+            }
+            
+            .title {
+                font-size: 1.4em;
+                margin-bottom: 5px;
+            }
+            
+            .subtitle {
+                margin-bottom: 15px;
+            }
+            
+            .form-group {
+                margin-bottom: 12px;
+            }
+        }
+        
+        /* تأثيرات إضافية */
+        .form-group input::placeholder {
+            color: #bdc3c7;
+            opacity: 0.8;
+        }
+        
+        .login-container {
+            animation: slideIn 0.6s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* تحسينات للأداء على الأجهزة المحمولة */
+        .login-container {
+            will-change: transform;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+        
+        /* إزالة التحديد على الأجهزة المحمولة */
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* السماح بالتحديد في حقول الإدخال */
+        input, textarea {
+            -webkit-user-select: text;
+            -khtml-user-select: text;
+            -moz-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+        
+        /* تحسين عرض الأزرار على الأجهزة المحمولة */
+        button {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">🏪</div>
+        <h1 class="title">تسجيل الدخول</h1>
+        <p class="subtitle">system cashier from markncode</p>
+        
+        <div id="errorMessage" class="error-message">
+            اسم المستخدم أو كلمة المرور غير صحيحة
+        </div>
+        
+        <div id="successMessage" class="success-message">
+            تم تسجيل الدخول بنجاح! جاري التحويل...
+        </div>
+        
+        <form id="loginForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="username">اسم المستخدم</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    placeholder="أدخل اسم المستخدم"
+                    autocomplete="username"
+                    required
+                    autocapitalize="none"
+                    autocorrect="off"
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    placeholder="أدخل كلمة المرور"
+                    autocomplete="current-password"
+                    required
+                    autocapitalize="none"
+                    autocorrect="off"
+                >
+            </div>
+            
+            <button type="submit" class="login-btn" onclick="handleLogin()">
+                تسجيل الدخول
+            </button>
+        </form>
+        
+        
+
+    <script>
+        // بيانات الدخول الافتراضية
+        const DEFAULT_USERNAME = 'markncode';
+        const DEFAULT_PASSWORD = 'Markncode123';
+        
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function() {
+            // إذا كان المستخدم مسجل الدخول بالفعل، قم بتحويله إلى الصفحة الرئيسية
+            if (localStorage.getItem('loginSuccess') === 'true') {
+                showSuccessMessage();
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            }
+            
+            // إضافة مستمع الأحداث للضغط على Enter
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    handleLogin();
+                }
+            });
+            
+            // تحسين الأداء على الأجهزة المحمولة
+            if ('ontouchstart' in window) {
+                document.body.classList.add('touch-device');
+            }
+        });
+        
+        // دالة معالجة تسجيل الدخول
+        function handleLogin() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+            
+            // إخفاء رسائل الخطأ والنجاح السابقة
+            hideMessages();
+            
+            // التحقق من صحة البيانات
+            if (!username || !password) {
+                showErrorMessage('يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+            
+            // التحقق من صحة بيانات الدخول
+            if (username === DEFAULT_USERNAME && password === DEFAULT_PASSWORD) {
+                // تسجيل الدخول ناجح
+                localStorage.setItem('loginSuccess', 'true');
+                localStorage.setItem('username', username);
+                localStorage.setItem('loginTime', new Date().toISOString());
+                
+                showSuccessMessage();
+                
+                // تحويل المستخدم إلى الصفحة الرئيسية بعد ثانيتين
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1500);
+            } else {
+                // بيانات دخول خاطئة
+                showErrorMessage('اسم المستخدم أو كلمة المرور غير صحيحة');
+                
+                // مسح كلمة المرور
+                document.getElementById('password').value = '';
+                document.getElementById('password').focus();
+            }
+        }
+        
+        // دالة عرض رسالة الخطأ
+        function showErrorMessage(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
+        
+        // دالة عرض رسالة النجاح
+        function showSuccessMessage() {
+            const successDiv = document.getElementById('successMessage');
+            successDiv.style.display = 'block';
+        }
+        
+        // دالة إخفاء جميع الرسائل
+        function hideMessages() {
+            document.getElementById('errorMessage').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+        }
+        
+        // دالة تسجيل الخروج (يمكن استدعاؤها من الصفحة الرئيسية)
+        function logout() {
+            localStorage.removeItem('loginSuccess');
+            localStorage.removeItem('username');
+            localStorage.removeItem('loginTime');
+            window.location.href = 'signin.html';
+        }
+        
+        // جعل دالة تسجيل الخروج متاحة عالمياً
+        window.logout = logout;
+        
+        // تحسين الأداء على الأجهزة المحمولة
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

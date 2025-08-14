@@ -1,0 +1,637 @@
+.reports-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.reports-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.reports-header h2 {
+  color: #2c3e50;
+  font-size: 2.2em;
+  margin: 0;
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.summary-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5em;
+  margin-right: 20px;
+}
+
+.card-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+/* Detailed Report Section */
+.detailed-report-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.section-header h3 {
+  color: #2c3e50;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.report-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.export-btn, .print-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.export-btn {
+  background: #28a745;
+  color: white;
+  margin: 0 5px;
+}
+
+.export-btn:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+/* تخصيص ألوان مختلفة لأزرار التصدير */
+.export-btn:nth-of-type(2) {
+  background: #17a2b8;
+}
+
+.export-btn:nth-of-type(2):hover {
+  background: #138496;
+  box-shadow: 0 4px 12px rgba(23, 162, 184, 0.3);
+}
+
+.export-btn:nth-of-type(3) {
+  background: #ffc107;
+  color: #212529;
+}
+
+.export-btn:nth-of-type(3):hover {
+  background: #e0a800;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.print-btn {
+  background: #6c757d;
+  color: white;
+}
+
+.print-btn:hover {
+  background: #5a6268;
+}
+
+/* Report Filters */
+.report-filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9em;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.clear-filters-btn {
+  padding: 8px 16px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: end;
+}
+
+.clear-filters-btn:hover {
+  background: #5a6268;
+}
+
+/* Sales Summary */
+.sales-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  border-radius: 10px;
+  color: white;
+}
+
+.summary-item {
+  text-align: center;
+}
+
+.summary-item span:first-child {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+
+.summary-item span:last-child {
+  display: block;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* Detailed Sales Table */
+.detailed-sales-table {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+}
+
+.detailed-sales-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+.detailed-sales-table th {
+  background: #343a40;
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  border: 1px solid #495057;
+}
+
+.detailed-sales-table td {
+  padding: 12px 10px;
+  border: 1px solid #e9ecef;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.detailed-sales-table tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.detailed-sales-table tr:hover {
+  background: #e9ecef;
+}
+
+/* Recent Sales */
+.recent-sales {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.recent-sale-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3498db;
+}
+
+.sale-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sale-id {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.sale-time {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.sale-amount {
+  font-weight: bold;
+  color: #28a745;
+  font-size: 1.1em;
+}
+
+.no-sales, .no-data {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Profit Styling */
+.positive-profit {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.negative-profit {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* قيم الربح والتكلفة */
+.profit-value {
+  color: #28a745;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
+
+.cost-value {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reports-container {
+    padding: 15px;
+  }
+  
+  .reports-header h2 {
+    font-size: 1.8em;
+  }
+  
+  .summary-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .summary-card {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .card-icon {
+    font-size: 2.2em;
+    margin: 0 0 15px 0;
+  }
+  
+  .card-content h3 {
+    font-size: 1em;
+    margin-bottom: 8px;
+  }
+  
+  .card-content p {
+    font-size: 1.6em;
+  }
+
+  .report-filters {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .filter-group {
+    width: 100%;
+  }
+  
+  .filter-group input,
+  .filter-group select {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .report-controls {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .export-btn, .print-btn {
+    padding: 10px 15px;
+    font-size: 0.85em;
+    margin: 2px;
+  }
+
+  .sales-summary {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .summary-item {
+    padding: 10px;
+  }
+  
+  .summary-item span:first-child {
+    font-size: 0.9em;
+  }
+  
+  .summary-item span:last-child {
+    font-size: 1.2em;
+  }
+
+  .detailed-sales-table {
+    font-size: 0.8em;
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+  
+  .detailed-sales-table table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reports-container {
+    padding: 10px;
+  }
+  
+  .reports-header h2 {
+    font-size: 1.5em;
+  }
+  
+  .summary-cards {
+    gap: 10px;
+  }
+  
+  .summary-card {
+    padding: 15px;
+  }
+  
+  .card-icon {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+  }
+  
+  .card-content h3 {
+    font-size: 0.9em;
+  }
+  
+  .card-content p {
+    font-size: 1.4em;
+  }
+  
+  .report-filters {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .filter-group input,
+  .filter-group select {
+    padding: 8px 10px;
+    font-size: 16px;
+  }
+  
+  .export-btn, .print-btn {
+    padding: 8px 12px;
+    font-size: 0.8em;
+    margin: 1px;
+  }
+  
+  .sales-summary {
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .summary-item span:first-child {
+    font-size: 0.8em;
+  }
+  
+  .summary-item span:last-child {
+    font-size: 1.1em;
+  }
+  
+  .detailed-sales-table {
+    font-size: 0.75em;
+  }
+  
+  .detailed-sales-table th,
+  .detailed-sales-table td {
+    padding: 6px 4px;
+  }
+}
+
+/* تحسينات للوضع الأفقي على الهاتف */
+@media (max-height: 500px) and (orientation: landscape) {
+  .reports-container {
+    padding: 10px;
+  }
+  
+  .summary-cards {
+    gap: 8px;
+  }
+  
+  .summary-card {
+    padding: 12px;
+  }
+  
+  .card-icon {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+  }
+  
+  .report-filters {
+    padding: 10px;
+    gap: 8px;
+  }
+  
+  .sales-summary {
+    padding: 12px;
+    gap: 8px;
+  }
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1200px) {
+  .summary-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .detailed-report-section {
+    padding: 40px;
+  }
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (hover: none) and (pointer: coarse) {
+  .summary-card:hover {
+    transform: none;
+  }
+  
+  .export-btn:hover,
+  .print-btn:hover {
+    transform: none;
+  }
+}
+
+/* تحسين الأداء على الأجهزة المحمولة */
+.reports-container {
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* إشعار المبيعات الجديدة */
+.new-sale-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  animation: slideInRight 0.5s ease-out;
+}
+
+.notification-content {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 300px;
+}
+
+.notification-icon {
+  font-size: 1.5em;
+}
+
+.notification-text {
+  flex: 1;
+  font-weight: 600;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.notification-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+  .new-sale-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+  }
+  
+  .notification-content {
+    min-width: auto;
+    padding: 12px 15px;
+  }
+  
+  .notification-text {
+    font-size: 0.9em;
+  }
+}
+

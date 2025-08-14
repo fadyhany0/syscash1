@@ -1,0 +1,482 @@
+.dashboard {
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.header {
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  padding: 12px 20px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-icon {
+  font-size: 1.2em;
+}
+
+.logout-text {
+  font-size: 0.95em;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 2px solid #e9ecef;
+  padding: 0 30px;
+}
+
+.tab-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+  color: #6c757d;
+  font-size: 0.9em;
+  min-width: 120px;
+}
+
+.tab-button:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+.tab-button.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+  background: white;
+}
+
+.tab-button span:first-child {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.tab-button span:last-child {
+  font-weight: 500;
+}
+
+.tab-content {
+  padding: 30px;
+}
+
+/* Backup Notification */
+.backup-notification {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  padding: 15px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notification-icon {
+  font-size: 1.5em;
+}
+
+.notification-text {
+  flex: 1;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.notification-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 95%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 5px;
+  }
+  
+  .container {
+    margin: 5px;
+    border-radius: 15px;
+  }
+  
+  .header {
+    padding: 20px 15px;
+    text-align: center;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .header-text {
+    order: 1;
+  }
+  
+  .header-actions {
+    order: 2;
+    justify-content: center;
+  }
+  
+  .logout-btn {
+    padding: 10px 18px;
+    font-size: 0.9em;
+    border-radius: 20px;
+  }
+  
+  .logout-icon {
+    font-size: 1.1em;
+  }
+  
+  .header h1 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+  }
+  
+  .header p {
+    font-size: 1em;
+  }
+  
+  .nav-tabs {
+    padding: 0 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tab-button {
+    min-width: 90px;
+    padding: 12px 15px;
+    font-size: 0.8em;
+    margin: 2px;
+  }
+  
+  .tab-button span:first-child {
+    font-size: 1.3em;
+  }
+  
+  .tab-content {
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+    padding: 3px;
+  }
+  
+  .container {
+    margin: 3px;
+    border-radius: 12px;
+  }
+  
+  .header {
+    padding: 15px 10px;
+  }
+  
+  .header-content {
+    gap: 15px;
+  }
+  
+  .logout-btn {
+    padding: 8px 16px;
+    font-size: 0.85em;
+    border-radius: 18px;
+    min-height: 44px;
+    min-width: 120px;
+  }
+  
+  .logout-icon {
+    font-size: 1em;
+  }
+  
+  .logout-text {
+    font-size: 0.9em;
+  }
+  
+  .header h1 {
+    font-size: 1.4em;
+  }
+  
+  .nav-tabs {
+    padding: 0 5px;
+  }
+  
+  .tab-button {
+    min-width: 70px;
+    padding: 8px 10px;
+    font-size: 0.7em;
+    margin: 1px;
+  }
+  
+  .tab-button span:first-child {
+    font-size: 1.1em;
+  }
+  
+  .tab-content {
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    margin: 2px;
+    border-radius: 10px;
+  }
+  
+  .header {
+    padding: 12px 8px;
+  }
+  
+  .header-content {
+    gap: 12px;
+  }
+  
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    border-radius: 16px;
+    min-height: 40px;
+    min-width: 100px;
+  }
+  
+  .logout-icon {
+    font-size: 0.9em;
+  }
+  
+  .logout-text {
+    font-size: 0.8em;
+  }
+  
+  .header h1 {
+    font-size: 1.3em;
+  }
+  
+  .nav-tabs {
+    padding: 0 3px;
+  }
+  
+  .tab-button {
+    min-width: 60px;
+    padding: 6px 8px;
+    font-size: 0.65em;
+  }
+}
+
+/* تحسينات للوضع الأفقي على الهاتف */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dashboard {
+    padding: 3px;
+  }
+  
+  .container {
+    margin: 3px;
+  }
+  
+  .header {
+    padding: 10px;
+  }
+  
+  .header-content {
+    flex-direction: row;
+    gap: 15px;
+  }
+  
+  .header-text {
+    order: 1;
+    flex: 1;
+  }
+  
+  .header-actions {
+    order: 2;
+  }
+  
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    border-radius: 16px;
+    min-height: 36px;
+    min-width: 90px;
+  }
+  
+  .logout-icon {
+    font-size: 0.9em;
+  }
+  
+  .logout-text {
+    font-size: 0.8em;
+  }
+  
+  .header h1 {
+    font-size: 1.3em;
+    margin-bottom: 3px;
+  }
+  
+  .header p {
+    font-size: 0.9em;
+  }
+  
+  .tab-content {
+    padding: 10px;
+  }
+}
+
+/* تحسينات للشاشات الكبيرة */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .tab-content {
+    padding: 40px;
+  }
+}
+
+/* Ultra-wide screen support */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1800px;
+  }
+  
+  .header-content {
+    gap: 40px;
+  }
+  
+  .logout-btn {
+    padding: 18px 28px;
+    font-size: 1.1em;
+    border-radius: 28px;
+    min-height: 56px;
+    min-width: 180px;
+  }
+  
+  .logout-icon {
+    font-size: 1.3em;
+  }
+  
+  .logout-text {
+    font-size: 1.1em;
+  }
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (hover: none) and (pointer: coarse) {
+  .logout-btn:hover {
+    transform: none;
+  }
+  
+  .tab-button:hover {
+    background: none;
+  }
+}
+
+/* تحسين الأداء على الأجهزة المحمولة */
+.container {
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
